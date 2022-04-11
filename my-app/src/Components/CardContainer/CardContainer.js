@@ -5,11 +5,12 @@ class CardContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            datos: undefined
+            datos: undefined,
+            count: 0
         }
     }
     componentDidMount() {
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/2/tracks&top?limit=12')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/2/tracks&top?limit=10')
             .then(response => response.json())
             .then(data => {
                 this.setState({datos: data})
@@ -17,21 +18,37 @@ class CardContainer extends Component {
             .catch(e => {console.log(e)})
     }
     componentDidUpdate() {
-
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/2/tracks&top?limit=${(this.state.count+1) * 10}`)
+            .then( response => response.json() )
+            .then( data => this.setState({
+                datos: data
+            }))
+            .catch( error => console.log(error) )
+    }
+    cargarMasTarjetas() {
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+    eliminarTarjeta() {
+        alert("Tarjeta eliminada")
     }
     render() {
         return (
-            <section className="card-container">
-                {
-                    this.state.datos === undefined?
-                    <p>Cargando...</p>:
-                    this.state.datos.data.map((data,idx) => {
-                        return(
-                            <Card image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} />
-                        )
-                    })
-                }
-            </section>
+            <>
+                <button type="button" className="btn-cargarMasTarjetas" onClick={() => {this.cargarMasTarjetas()}}>Cargar más tarjetas</button>
+                <section className="card-container">
+                    {
+                        this.state.datos === undefined?
+                        <p>Cargando...</p>:
+                        this.state.datos.data.map((data,idx) => {
+                            return(
+                                <Card image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} id={data.id} eliminarTarjeta={() => {this.eliminarTarjeta()}} />
+                            )
+                        })
+                    }
+                </section>
+            </>
         )
     }
 }

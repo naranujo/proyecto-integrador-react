@@ -7,14 +7,11 @@ class Card extends Component {
             status: props
         }
     }
-    eliminarTarjeta(){
-        alert("Tarjeta eliminada")
-    }
     render() {
         return (
             <article>
                 <main>
-                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.eliminarTarjeta()}}><i className="fas fa-times"></i></button>
+                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.state.status.eliminarTarjeta()}}><i className="fas fa-times"></i></button>
                     <img src={`https://e-cdns-images.dzcdn.net/images/cover/${this.state.status.image}/500x500-000000-80-0-0.jpg`} alt="" />
                     <h3>{this.state.status.title}</h3>
                     <p className="description">{`${this.state.status.artist} - ${this.state.status.album}`}</p>

@@ -1,5 +1,4 @@
 import Header from './Components/Header/Header'
-import CargarMasTarjetas from './Components/CargarMasTarjetas/CargarMasTarjetas'
 import CardContainer from './Components/CardContainer/CardContainer'
 import './style.css'
 
@@ -8,7 +7,6 @@ function App() {
     <>
       <Header />
       <main>
-        <CargarMasTarjetas />
         <CardContainer />
       </main>
       <footer>

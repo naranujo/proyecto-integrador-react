@@ -37,6 +37,7 @@ header section form button {
     font-size: 0.75em;
     background-color: #fff;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 main button {
@@ -46,6 +47,7 @@ main button {
     font-size: 0.85em;
     background-color: #fff;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 /* 
@@ -65,7 +67,7 @@ main button {
     width: calc((100vw / 4) - (10px * 4));
     margin: 20px 10px;
     border: 1px solid #000;
-    padding: 10px
+    padding: 10px;
 }
 
 .card-container article main, main {
@@ -85,21 +87,24 @@ main button {
 
 .card-container article a, main button {
     align-self: flex-end;
+    cursor: pointer;
 }
 
-.card-container article a:first-child {
+.btn-eliminarTarjeta {
     border: 1px solid #000;
     padding: 2px 5px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.card-container article a:last-child, .card-container article a:first-child {
+.card-container article a {
     color: blue;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .aditional-info {
-    /* display: none; */
+    display: none;
 }
 
 footer ul {
