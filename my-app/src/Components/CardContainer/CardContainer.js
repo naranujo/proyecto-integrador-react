@@ -44,7 +44,9 @@ class CardContainer extends Component {
                 <section className="card-container">
                     {
                         this.state.datos === undefined?
-                        <p>Cargando...</p>:
+
+                        <img src="./images/carga.gif" />:
+
                         this.state.datos.data.map((data,idx) => {
                             return(
                                 <Card image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} id={data.id} eliminarTarjeta={(id) => {this.eliminarTarjeta(id)}} />
