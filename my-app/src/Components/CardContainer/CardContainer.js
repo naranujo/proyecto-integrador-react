@@ -30,8 +30,12 @@ class CardContainer extends Component {
             count: this.state.count + 1
         })
     }
-    eliminarTarjeta() {
-        alert("Tarjeta eliminada")
+    eliminarTarjeta(id) {
+        let cancionesFiltradas = [];
+        cancionesFiltradas = this.state.datos.data.filter(unaCancion => unaCancion.id !== id);
+        this.setState ({
+            datos: cancionesFiltradas
+        })
     }
     render() {
         return (
@@ -43,7 +47,7 @@ class CardContainer extends Component {
                         <p>Cargando...</p>:
                         this.state.datos.data.map((data,idx) => {
                             return(
-                                <Card image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} id={data.id} eliminarTarjeta={() => {this.eliminarTarjeta()}} />
+                                <Card image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} id={data.id} eliminarTarjeta={(id) => {this.eliminarTarjeta(id)}} />
                             )
                         })
                     }

@@ -11,7 +11,7 @@ class Card extends Component {
         return (
             <article>
                 <main>
-                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.state.status.eliminarTarjeta()}}><i className="fas fa-times"></i></button>
+                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.state.status.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
                     <img src={`https://e-cdns-images.dzcdn.net/images/cover/${this.state.status.image}/500x500-000000-80-0-0.jpg`} alt="" />
                     <h3>{this.state.status.title}</h3>
                     <p className="description">{`${this.state.status.artist} - ${this.state.status.album}`}</p>
@@ -25,4 +25,4 @@ class Card extends Component {
     }
 }
 
-export default Card
+export default Card;
