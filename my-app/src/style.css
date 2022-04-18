@@ -4,23 +4,26 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px solid #000;
     margin: 20px;
     padding: 5px;
 }
 
-header section {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 20vw;
+header h1 {
+    padding: 5px;
+    margin-left: 5px;
 }
 
-header section form input {
+header form input {
     border: 1px solid #000;
     border-right: 0px solid #000;
     border-radius: 5px 0 0 5px;
@@ -30,7 +33,12 @@ header section form input {
     margin-right: -5px;
 }
 
-header section form button {
+header form {
+    display: flex;
+    align-items: center;
+}
+
+header form button {
     border: 1px solid #000;
     border-left: 0px solid #000;
     border-radius: 0 5px 5px 0;
@@ -47,46 +55,51 @@ main button {
     padding: 5px;
     font-size: 0.85em;
     background-color: #fff;
-    margin-right: 20px;
     cursor: pointer;
 }
 
-/* 
-       /-****************************************************************************-/
-      /    TENER EN CUENTA QUE NOS PIDE HACER DOS ORIENTACIONES Y MEDIA QUERYS       /
-     /     YO PERMITIRÍA SOLAMENTE ORIENTACIÓN VERTICAL PARA EL CASO DE TELEFONOS   /
-    /-****************************************************************************-/
-*/
+main button:last-child {
+    margin-top: 10px;
+}
 
-.card-container {
+.card-container-grid {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    align-items: baseline;
 }
 
-.card-container article {
+.section-cargarMas {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    width: 15vw;
+    align-self: flex-end;
+}
+
+.card-container-grid article {
     width: calc((100vw / 4) - (10px * 4));
     margin: 20px 10px;
     border: 1px solid #000;
     padding: 10px;
 }
 
-.card-container article main, main {
+.card-container-grid article main, main {
     display: flex;
     flex-flow: column wrap;
 }
 
-.card-container article img {
+.card-container-grid article img {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.card-container article p {
+.card-container-grid article p {
     text-align: justify;
     margin: 10px 0;
 }
 
-.card-container article a, main button {
+.card-container-grid article a, main button {
     align-self: flex-end;
     cursor: pointer;
 }
@@ -98,14 +111,10 @@ main button {
     cursor: pointer;
 }
 
-.card-container article a {
+.card-container-grid article a {
     color: blue;
     text-decoration: none;
     cursor: pointer;
-}
-
-.aditional-info {
-    display: none;
 }
 
 footer ul {
@@ -119,4 +128,60 @@ footer ul {
 
 footer ul li {
     margin: 0 10px;
+}
+
+/* ===== */
+.card-container-lista article {
+    width: calc((100vw / 1) - (10px * 4));
+    margin: 20px;
+    border: 1px solid #000;
+    padding: 0 10px;
+}
+
+.card-container-lista article main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card-buttons {
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+    width: 20vw
+}
+
+.card-container-lista .card-buttons button:first-child, .aditional-info p, .description-fragment h3, .description-fragment p {
+    position: relative;
+    top: 10px;
+}
+
+.card-container-lista .card-buttons button:last-child {
+    position: relative;
+    top: calc(100% - 80px);
+}
+
+.card-container-lista article img {
+    width: 15%;
+}
+
+.card-container-lista article .aditional-info {
+    width: 20vw
+}
+
+.card-container-lista article a, main button {
+    cursor: pointer;
+}
+
+.card-container-lista article a {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lista main {
+    justify-content: space-between;
+}
+
+.lista main section {
+    width: 20vw
 }

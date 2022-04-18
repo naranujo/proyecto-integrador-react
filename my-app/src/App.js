@@ -1,11 +1,17 @@
-import Header from './Components/Header/Header'
+import React from 'react';
 import CardContainer from './Components/CardContainer/CardContainer'
 import './style.css'
 
 function App() {
   return (
-    <>
-      <Header />
+    <React.Fragment>
+      <header>
+          <h1>Título/ Nombre de la app</h1>
+          <form action="">
+              <input type="text" name="search" id="" placeholder="Search" />
+              <button type="submit"><i className="fas fa-search"></i></button>
+          </form>
+      </header>
       <main>
         <CardContainer />
       </main>
@@ -16,7 +22,7 @@ function App() {
             <li>Nicolás Araujo</li>
         </ul>
       </footer>
-    </>
+    </React.Fragment>
   );
 }
 
