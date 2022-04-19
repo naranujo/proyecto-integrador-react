@@ -32,6 +32,14 @@ header form input {
     background-color: #fff;
     margin-right: -5px;
 }
+.section-cargarMas input{
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.85em;
+    margin: auto;
+
+}
 
 header form {
     display: flex;
@@ -73,8 +81,10 @@ main button:last-child {
     display: flex;
     justify-content: space-between;
     margin: 20px;
-    width: 15vw;
+    width: 25vw;
     align-self: flex-end;
+    align-items: flex-end;
+    
 }
 
 .card-container-grid article {

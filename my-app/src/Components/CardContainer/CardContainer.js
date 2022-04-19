@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
+import Buscador from '../Buscador/Buscador';
 
 class CardContainer extends Component {
     constructor(props) {
@@ -58,6 +59,14 @@ class CardContainer extends Component {
             datos: cancionesFiltradas
         })
     }
+
+    filtrar(datos){
+        let musicaFiltrada = []
+        musicaFiltrada = this.state.datos.filter(Musica=>Musica.title_short.toLowerCase().includes(datos.toLowerCase()))
+        this.setState({
+            datos: musicaFiltrada
+        })
+    }
     render() {
         return (
             <React.Fragment>
@@ -65,6 +74,8 @@ class CardContainer extends Component {
                     this.state.grid ?
                     <React.Fragment>
                         <section className="section-cargarMas">
+                    <Buscador filtrar={(datos)=>this.filtrar(datos)}/> 
+                        
                             <button type="button" className="btn-grid selected" onClick={() => {this.vistaGrid()}} ><i className="fas fa-th"></i></button>
                             <button type="button" className="btn-list" onClick={() => {this.vistaLista()}} ><i className="fas fa-align-justify"></i></button>
                             <button type="button" className="btn-cargarMasTarjetas" onClick={() => {this.cargarMasTarjetas()}}>Cargar más tarjetas</button>
@@ -83,6 +94,7 @@ class CardContainer extends Component {
                     </React.Fragment> :
                     <React.Fragment>
                         <section className="section-cargarMas">                            
+                            <Buscador filtrar={(datos)=>this.filtrar(datos)}/> 
                             <button type="button" className="btn-grid" onClick={() => {this.vistaGrid()}} ><i className="fas fa-th"></i></button>
                             <button type="button" className="btn-list selected" onClick={() => {this.vistaLista()}} ><i className="fas fa-align-justify"></i></button>
                             <button type="button" className="btn-cargarMasTarjetas" onClick={() => {this.cargarMasTarjetas()}}>Cargar más tarjetas</button>
