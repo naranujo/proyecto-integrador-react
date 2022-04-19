@@ -25,7 +25,7 @@ class Card extends Component {
                     {
                         this.props.className === 'grid'?
                         <React.Fragment>
-                            <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.state.status.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
+                            <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.props.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
                             <img src={`https://e-cdns-images.dzcdn.net/images/cover/${this.state.status.image}/500x500-000000-80-0-0.jpg`} alt="" />
                             <section>
                                 <h3>{this.state.status.title}</h3>
@@ -64,7 +64,7 @@ class Card extends Component {
                                         <p>{`Duración: ${this.state.status.duration} Rank: ${this.state.status.rank}`}</p>                    
                                     </section>
                                     <section className="card-buttons">
-                                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.state.status.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
+                                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.props.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
                                             <button type="button" className="btn-verMas" onClick={() => {this.verMas()}}>Ver más</button>
                                     </section>
                                 </React.Fragment> :
@@ -74,7 +74,7 @@ class Card extends Component {
                                         <p>{`Duración: ${this.state.status.duration} Rank: ${this.state.status.rank}`}</p>                    
                                     </section>
                                     <section className="card-buttons">
-                                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.state.status.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
+                                    <button type="button" className="btn-eliminarTarjeta" onClick={() => {this.props.eliminarTarjeta(this.props.id)}}><i className="fas fa-times"></i></button>
                                         <button type="button" className="btn-verMenos" onClick={() => {this.verMenos()}}>Ver menos</button>
                                     </section>
                                 </React.Fragment>

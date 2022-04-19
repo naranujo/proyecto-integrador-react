@@ -84,6 +84,11 @@ main button:last-child {
     padding: 10px;
 }
 
+.gif-carga {
+    width: 150px;
+    margin: calc(100vh / 4) calc((100vw / 2) - (150px / 2));
+}
+
 .card-container-grid article main, main {
     display: flex;
     flex-flow: column wrap;
@@ -184,4 +189,8 @@ footer ul li {
 
 .lista main section {
     width: 20vw
+}
+
+.selected {
+    box-shadow: 1px 1px 1px black;
 }
