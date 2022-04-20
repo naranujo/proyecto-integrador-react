@@ -11,20 +11,20 @@ class Buscador extends Component{
     obtenerDatos(datos){
         this.setState({
             value: datos.target.value
-        }, () => this.props.filtrar(this.state.value))
+        })
         
     }
     preventDefault(event){
-        event.preventDefault()
-
+        event.preventDefault();
+        if(this.state.value !== '') {
+            this.props.filtrar(this.state.value)
+        }
     }
-
-
     render(){
         return(
-            <form onSubmit={(event)=>this.preventDefault(event)}>
-                
-            <input onChange={(cambios)=>this.obtenerDatos(cambios)} type="text" placeholder='search' value={this.state.value}/>  
+            <form onSubmit={(event)=>this.preventDefault(event)} className="formulario-filtrado"> 
+                <input onInput={(cambios)=>this.obtenerDatos(cambios)} type="text" placeholder='Filtrar' value={this.state.value}/>
+                <button type="submit"><i className="fa fa-search"></i></button>
             </form>
         )
     }
@@ -33,4 +33,5 @@ class Buscador extends Component{
 }
 
 export default Buscador;
+
 

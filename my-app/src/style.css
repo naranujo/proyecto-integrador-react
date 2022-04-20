@@ -23,37 +23,21 @@ header h1 {
     margin-left: 5px;
 }
 
-header form input {
+.formulario-filtrado input{
     border: 1px solid #000;
     border-right: 0px solid #000;
     border-radius: 5px 0 0 5px;
     padding: 5px;
-    font-size: 0.75em;
-    background-color: #fff;
-    margin-right: -5px;
-}
-.section-cargarMas input{
-    border: 1px solid #000;
-    border-radius: 5px;
-    padding: 5px;
     font-size: 0.85em;
     margin: auto;
-
 }
 
-header form {
-    display: flex;
-    align-items: center;
-}
-
-header form button {
+.formulario-filtrado button {
     border: 1px solid #000;
     border-left: 0px solid #000;
     border-radius: 0 5px 5px 0;
     padding: 5px;
-    font-size: 0.75em;
-    background-color: #fff;
-    margin-right: 20px;
+    font-size: 0.85em;
     cursor: pointer;
 }
 
@@ -81,10 +65,16 @@ main button:last-child {
     display: flex;
     justify-content: space-between;
     margin: 20px;
-    width: 25vw;
+    width: 97vw;
     align-self: flex-end;
     align-items: flex-end;
     
+}
+
+.section-cargarMas div {
+    width: 15vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card-container-grid article {
