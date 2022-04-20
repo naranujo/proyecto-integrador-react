@@ -117,13 +117,15 @@ class CardContainer extends Component {
                         </section>
                         <section className="card-container-lista">
                             {
-                                this.state.datos.length === 0 && !this.state.busqueda ?
-                                <img className="gif-carga" src="./images/carga.gif" alt="gif de carga" /> :
-                                this.state.datos.map((data,idx) => {
-                                    return(
-                                        <Card className="lista" image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} id={data.id} eliminarTarjeta={(id) => {this.eliminarTarjeta(id)}} key={data.id+idx} />
-                                    )
-                                })
+                          this.state.datos.length === 0 && this.state.busqueda === false ?
+                          <img className="gif-carga" src="./images/carga.gif" alt="gif de carga" /> :
+                          this.state.datos.length !== 0 ?
+                          this.state.datos.map((data,idx) => {
+                              return(
+                                  <Card className="grid" image={data.md5_image} title={data.title_short} artist={data.artist.name} album={data.album.title} duration={data.duration} rank={data.rank} id={data.id} eliminarTarjeta={(id) => {this.eliminarTarjeta(id)}} key={data.id+idx} />
+                              )
+                          }):
+                          <p>No hay resultados para tu busqueda</p>       
                             }
                         </section>
                     </React.Fragment>
