@@ -7,15 +7,20 @@
 body {
     display: flex;
     flex-direction: column;
+    background-color: rgb(24, 16, 41);
+
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #000;
+    border: 1px solid rgb(122, 58, 141);
     margin: 20px;
     padding: 5px;
+    background-color: rgb(24, 16, 41);
+    color: #fff;
+    font-family: 'Cormorant', serif;
 }
 
 header h1 {
@@ -24,25 +29,32 @@ header h1 {
 }
 
 .formulario-filtrado input{
-    border: 1px solid #000;
-    border-right: 0px solid #000;
+    border: 1px solid rgb(231, 116, 216);
+    border-right: 0px solid rgb(231, 116, 216);
     border-radius: 5px 0 0 5px;
     padding: 5px;
     font-size: 0.85em;
     margin: auto;
+    background: rgb(57, 36, 82);
 }
 
 .formulario-filtrado button {
-    border: 1px solid #000;
-    border-left: 0px solid #000;
+    border: 1px solid rgb(231, 116, 216);
+    border-left: 0px solid rgb(231, 116, 216);
     border-radius: 0 5px 5px 0;
     padding: 5px;
     font-size: 0.85em;
     cursor: pointer;
+    background: rgb(57, 36, 82);
+
+}
+.fa-search:before {
+    content: "\f002";
+    color: #fff;
 }
 
 main button {
-    border: 1px solid #000;
+    border: 1px solid rgb(231, 116, 216);
     border-radius: 5px;
     padding: 5px;
     font-size: 0.85em;
@@ -80,7 +92,7 @@ main button:last-child {
 .card-container-grid article {
     width: calc((100vw / 4) - (10px * 4));
     margin: 20px 10px;
-    border: 1px solid #000;
+    border: 1px solid rgb(122, 58, 141);;
     padding: 10px;
 }
 
@@ -102,6 +114,7 @@ main button:last-child {
 .card-container-grid article p {
     text-align: justify;
     margin: 10px 0;
+    color: #fff;
 }
 
 .card-container-grid article a, main button {
@@ -110,7 +123,7 @@ main button:last-child {
 }
 
 .btn-eliminarTarjeta {
-    border: 1px solid #000;
+    border: 1px solid rgb(231, 116, 216);
     padding: 2px 5px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -126,9 +139,10 @@ footer ul {
     display: flex;
     justify-content:flex-end;
     list-style: none;
-    border: 1px solid #000;
+    border: 1px solid rgb(231, 116, 216);
     margin: 20px;
     padding: 5px;
+    color: #fff;
 }
 
 footer ul li {
@@ -139,7 +153,7 @@ footer ul li {
 .card-container-lista article {
     width: calc((100vw / 1) - (10px * 4));
     margin: 20px;
-    border: 1px solid #000;
+    border: 1px solid rgb(231, 116, 216);
     padding: 0 10px;
 }
 
@@ -175,8 +189,21 @@ footer ul li {
 
 .card-container-lista article a, main button {
     cursor: pointer;
+    background:  rgb(57, 36, 82);
+    
 }
-
+.fa-align-justify:before {
+    content: "\f039";
+    color: #fff;
+}
+main button:last-child {
+    margin-top: 10px;
+    color: #fff;
+}
+.fa-times:before {
+    content: "\f00d";
+    color: #fff;
+}
 .card-container-lista article a {
     color: blue;
     text-decoration: none;
@@ -193,4 +220,15 @@ footer ul li {
 
 .selected {
     box-shadow: 1px 1px 1px black;
+    background: rgb(57, 36, 82);
+}
+.fa-th:before {
+    content: "\f00a";
+    color: #fff;
+}
+h3 {
+    color: #fff;
+}
+
+@media (max-width: 420px) {
 }

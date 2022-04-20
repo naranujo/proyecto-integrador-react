@@ -6,7 +6,7 @@ function App() {
   return (
     <React.Fragment>
       <header>
-          <h1>Título/ Nombre de la app</h1>
+          <h1>Mode OFF</h1>
  
       </header>
       <main>
