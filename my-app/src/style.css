@@ -231,4 +231,19 @@ h3 {
 }
 
 @media (max-width: 420px) {
+    .card-container-grid article {
+        width: calc((100vw / 1) - (10px * 1));
+    }
+    .btn-cargarMasTarjetas{
+        width: 30px;
+        font-size: 5px;
+    }
+    .formulario-filtrado input{
+        width: 45px;
+    }
+    .section-cargarMas {
+        width: 80vw;
+        align-items: flex-start;
+        align-self: flex-start;
+    }
 }
